@@ -1,0 +1,77 @@
+Analyze the attached resume document and extract its information into a JSON object with this exact structure:
+
+{
+  "personal_info": {
+    "professional_summary": "string or null",
+    "phone": "string or null",
+    "address": "string or null", 
+    "city": "string or null",
+    "country": "string or null",
+    "postal_code": "string or null",
+    "linked_in_url": "string or null",
+    "portfolio_url": "string or null",
+    "job_title": "string or null"
+  },
+  "skills": [
+    {
+      "skill_name": "string",
+      "proficiency_level": "string or null",
+      "years_of_experience": "integer or null"
+    }
+  ],
+  "experience": [
+    {
+      "job_title": "string or null",
+      "company_name": "string or null", 
+      "description": "string or null",
+      "location": "string or null",
+      "start_date": "YYYY-MM-DD or null",
+      "end_date": "YYYY-MM-DD or null"
+    }
+  ],
+  "education": [
+    {
+      "degree": "string or null",
+      "institution": "string or null",
+      "field_of_study": "string or null", 
+      "start_date": "YYYY-MM-DD or null",
+      "end_date": "YYYY-MM-DD or null",
+      "grade": "string or null"
+    }
+  ],
+  "languages": [
+    {
+      "language": "string",
+      "proficiency_level": "string or null"
+    }
+  ],
+  "projects": [
+    {
+      "name": "string or null",
+      "description": "string or null",
+      "role": "string or null",
+      "technologies": "string or null",
+      "start_date": "YYYY-MM-DD or null", 
+      "end_date": "YYYY-MM-DD or null",
+      "url": "string or null"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "string or null",
+      "issuer": "string or null",
+      "issue_date": "YYYY-MM-DD or null",
+      "expiration_date": "YYYY-MM-DD or null", 
+      "credential_id": "string or null",
+      "credential_url": "string or null"
+    }
+  ]
+}
+
+Instructions:
+1. Extract all relevant information accurately
+2. Use null for any fields that are not present in the resume
+3. For dates, use YYYY-MM-DD format or null if not available
+4. For skills, try to infer proficiency levels if mentioned
+5. Return only valid JSON, no additional text
+6. If a section is empty, return an empty array []
