@@ -102,7 +102,7 @@ class ResumeParserService:
     def _validate_and_clean_data(self, parsed_data):
         """Validate and clean the parsed data"""
         validated_data = {
-            'personal_info': parsed_data.get('personal_info', {}),
+            'applicant': parsed_data.get('applicant', {}),
             'skills': parsed_data.get('skills', []),
             'experience': parsed_data.get('experience', []),
             'education': parsed_data.get('education', []),
