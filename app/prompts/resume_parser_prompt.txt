@@ -17,8 +17,8 @@ Analyze the attached resume document and extract its information into a JSON obj
   },
   "skills": [
     {
-      "skill_name": "string",
-      "years_of_experience": "integer or null"
+      "skillId": "integer",
+      "yearsOfExperience": "integer or null"
     }
   ],
   "experience": [
@@ -82,3 +82,12 @@ If only a year is given (e.g., "2022"), use the first day of the year: 2022-01-0
 If an end_date is listed as "Present", "Current", or similar, the value must be null.
 Language Proficiency: For languages.cefr_level, attempt to map common proficiency descriptions (e.g., 'Native', 'Fluent', 'Conversational', 'Basic') to the CEFR scale (C2, C1, B2, A1). If a direct mapping is not possible, use the text as provided (e.g., 'Professional Working Proficiency').
 Data Cleaning: Ensure extracted text (like description or professional_summary) is cleaned of resume formatting artifacts (e.g., remove bullet point characters, excessive whitespace).
+Skill Parsing: Use the below database result from the skills table while parsing the skills:
+1	"Java"
+2	"Spring Boot"
+3	"PostgreSQL"
+4	"Docker"
+5	"AWS"
+6	"React"
+7	"TypeScript"
+8	"SQL"
