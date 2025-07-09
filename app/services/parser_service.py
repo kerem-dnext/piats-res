@@ -60,7 +60,10 @@ class ResumeParserService:
 
             response = self.client.models.generate_content(
                 model="gemini-2.5-flash",
-                contents=[prompt, file_part]
+                contents=[prompt, file_part],
+                config=types.GenerateContentConfig(
+                    thinking_config=types.ThinkingConfig(thinking_budget=0)
+                )
             )
             response_text = response.text.strip() if response.text else ""
             current_app.logger.debug(f"LLM response for: {response_text[:200]}...")
